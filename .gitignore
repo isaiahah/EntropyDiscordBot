@@ -1,8 +1,7 @@
-# Old Javascript
+# Secrets
 config.json
+bot_secrets.py
 
 # Pycharm
 .idea
-
-# Bot Secrets
-bot_secrets.py
+__pycache__
