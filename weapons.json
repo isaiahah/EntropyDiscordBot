@@ -1,0 +1,92 @@
+{
+  "battleaxe": {
+    "name": "Battle Axe",
+    "description": "A thick, heavy axe blade rimmed with steel on the end of a wooden shaft. Ready to crush anything it hits.",
+    "dice_count": 1,
+    "dice_sides": 12,
+    "modifier": 0,
+    "range": 1
+  },
+  "crossbow": {
+    "name": "Crossbow",
+    "description": "Two beams of wood mounted in a T, with a bowstring connected to a trigger. So simple anyone can use it.",
+    "dice_count": 1,
+    "dice_sides": 10,
+    "modifier": 0,
+    "range": 8
+  },
+  "dagger": {
+    "name": "Dagger",
+    "description": "Is this a dagger that I see before me, the handle toward my hand? Come, let me clutch thee...",
+    "dice_count": 2,
+    "dice_sides": 3,
+    "modifier": 0,
+    "range": 1
+  },
+  "longbow": {
+    "name": "Longbow",
+    "description": "A bow as tall as a person with a stiff string. Perfect for fast shots from far away.",
+    "dice_count": 2,
+    "dice_sides": 3,
+    "modifier": 0,
+    "range": 10
+  },
+  "longsword": {
+    "name": "Longsword",
+    "description": "A two-handed iron blade a meter long and a kilogram heavy designed for repeated attacks against strong enemies",
+    "dice_count": 2,
+    "dice_sides": 5,
+    "modifier": 0,
+    "range": 1
+  },
+  "garrote": {
+    "name": "Garrote",
+    "description": "A thin meter-long wire run between 2 woden handles. Perfect for choking if you can get it around the neck.",
+    "dice_count": 1,
+    "dice_sides": 2,
+    "modifier": 0,
+    "range": 1,
+    "effects": "Neither you or target may act. Target absorbs 75% of damage directed at you."
+  },
+  "darts": {
+    "name": "Darts",
+    "description": "Small iron darts with miniature flights carved from feathers. Throw a handful, some might hit",
+    "dice_count": 1,
+    "dice_sides": 3,
+    "modifier": 0,
+    "range": 6
+  },
+  "compoundbow": {
+    "name": "Compound Bow",
+    "description": "A bow with several pulleys holding several strings at relatively loose tension each. Even while it's easier to draw, it launches arrows a lot faster.",
+    "dice_count": 2,
+    "dice_sides": 5,
+    "modifier": 0,
+    "range": 14
+  },
+  "magicbow": {
+    "name": "Magic Bow",
+    "description": "A normal longbow, enchanted with a variety of spells.",
+    "dice_count": 2,
+    "dice_sides": 3,
+    "modifier": 0,
+    "range": 10,
+    "effects": "+2 Accuracy. 20% Soul Seal. Every third shot stuns."
+  },
+  "knifebracelet": {
+    "name": "Knife Bracelet",
+    "description": "A bracelet with a knife sticking out of it.",
+    "dice_count": 1,
+    "dice_sides": 3,
+    "modifier": 0,
+    "range": 1
+  },
+  "vampireslash": {
+    "name": "Vampire Slash",
+    "description": "A wicked slice using sharp vampire claws.",
+    "dice_count": 1,
+    "dice_sides": 7,
+    "modifier": 0,
+    "range": 1
+  }
+}

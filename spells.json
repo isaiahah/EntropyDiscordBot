@@ -1,0 +1,38 @@
+{
+  "acidspray": {
+    "name":  "Acid Spray",
+    "dice_count": 1,
+    "dice_sides": 4,
+    "modifier": 0
+  },
+  "lightningstrike": {
+    "name":  "Lightning Strike",
+    "dice_count": 1,
+    "dice_sides": 10,
+    "modifier": 10
+  },
+  "spearoflight": {
+    "name":  "Spear Of Light",
+    "dice_count": 1,
+    "dice_sides": 10,
+    "modifier": 5
+  },
+  "rapidcharge": {
+    "name":  "Rapid Charge",
+    "dice_count": 1,
+    "dice_sides": 10,
+    "modifier": 0
+  },
+  "fireball": {
+    "name":  "Fireball",
+    "dice_count": 3,
+    "dice_sides": 8,
+    "modifier": 0
+  },
+  "calllightning": {
+    "name":  "Call Lightning",
+    "dice_count": 3,
+    "dice_sides": 10,
+    "modifier": 0
+  }
+}
