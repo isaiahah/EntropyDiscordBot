@@ -14,14 +14,19 @@ def command_handler(message: str) -> str:
     run that command with the message as input.
 
     Command Priority Order:
+    - Help
     - Roll
     - Weapons
     - Spells
     """
+    if message.startswith('help'):
+        return help_handler(message)
+
     match_roll = re.compile('roll \d*d\d+( [+-]\d+)?\Z')
-    match_modifier = re.compile('[+-]\d+\Z')
     if match_roll.match(message) is not None:
         return dice_handler(message)
+
+    match_modifier = re.compile('[+-]\d+\Z')
     if (message.split()[0] in weapons and
             ((len(message.split()) == 1) or (len(message.split()) == 2 and
              match_modifier.match(message.split()[1]) is not None))):
@@ -30,6 +35,44 @@ def command_handler(message: str) -> str:
             ((len(message.split()) == 1) or (len(message.split()) == 2 and
              match_modifier.match(message.split()[1]) is not None))):
         return spell_handler(message)
+
+
+def help_handler(message: str) -> str:
+    """
+    Return the help page specified. Help Pages:
+    - General and Dice (accessed with no modifier or invalid modifier)
+    - Weapons (accessed with 'weapons' or 'w' modifier)
+    - Spells (accessed with 'spells' or 's' modifier)
+
+    Precondition: message is of the form 'help modifier' where modifier may be
+        none.
+    """
+    if len(message.split()) == 1:
+        modifier = ''
+    else:
+        modifier = message.split()[1]
+    if modifier == 'weapons' or modifier == 'w':
+        output = 'Weapons:\n'
+        for weapon in weapons:
+            output += '{0}: {1}d{2}\n'.format(weapons[weapon]['name'],
+                                              weapons[weapon]['dice_count'],
+                                              weapons[weapon]['dice_sides'])
+        return output
+    if modifier == 'spells' or modifier == 's':
+        output = 'Spells:\n'
+        for spell in spells:
+            output += '{0}: {1}d{2}'.format(spells[spell]['name'],
+                                            spells[spell]['dice_count'],
+                                            spells[spell]['dice_sides'])
+            if spells[spell]['modifier'] != 0:
+                output += ' +{0}'.format(spells[spell]['modifier'])
+            output += '\n'
+        return output
+    else:
+        output = 'To roll X D-sided dice with a modifier M, enter ' \
+                 '`!roll xdD +M`.\n For commands on weapons or spells, type ' \
+                 '`help weapons` or `help spells`.'
+        return output
 
 
 def dice_handler(message: str) -> str:
