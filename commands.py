@@ -1,3 +1,4 @@
+from typing import Optional
 from random import randint
 import re
 import json
@@ -35,6 +36,8 @@ def command_handler(message: str) -> str:
             ((len(message.split()) == 1) or (len(message.split()) == 2 and
              match_modifier.match(message.split()[1]) is not None))):
         return spell_handler(message)
+    else:
+        return misc_handler(message)
 
 
 def help_handler(message: str) -> str:
@@ -142,7 +145,8 @@ def weapon_handler(message: str) -> str:
 
 
 def spell_handler(message: str) -> str:
-    """Give the result of attacking with the spell given in the message, using
+    """
+    Give the result of attacking with the spell given in the message, using
         the information given in the spell JSON file.
     Precondition: Message is a spell in the JSON file with an optional modifier.
     """
@@ -167,6 +171,18 @@ def spell_handler(message: str) -> str:
                str(dice_sides) + dice_modifier + '\nResults: ' + \
                str(dice_rolls).strip('[]') + '\nTotal: ' + str(total)
     return response
+
+
+def misc_handler(message: str) -> Optional[str]:
+    """
+    Handle miscellaneous commands (currently only memes).
+    This could load from JSON like weapons or spells, but doesn't as I don't
+        expect many new miscellaneous commands.
+    """
+    if message == 'kinsey':
+        dice_rolls, total = roll_dice(dice_count=1, dice_sides=7,
+                                      dice_modifier=-1)
+        return str(total)
 
 
 def roll_dice(dice_count: int = 1, dice_sides: int = 20,
